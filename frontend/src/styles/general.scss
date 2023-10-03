@@ -1,0 +1,34 @@
+@import './partials/mixins';
+@import './partials/variables';
+
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+
+}
+
+.loader {
+  width: 200px;
+  height: 200px;
+  background-image: url(../assets/logo.png);
+  background-size: cover;
+  display: inline-block;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+  position: absolute;
+  //centro il loader
+  top: calc(50vh - 4rem);
+  left: calc(50vw - 100px);
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(-360deg);
+  }
+}

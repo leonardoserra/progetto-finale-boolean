@@ -1,0 +1,245 @@
+@use "./variables" as *;
+
+@mixin flex-center {
+    display: flex;
+    align-items: center;
+}
+
+@mixin container-80 {
+    width: 80%;
+    margin: 0px auto;
+}
+
+//CARD PERSONALIZZATE
+
+@mixin card-1 {
+    padding: 1rem;
+    text-align: center;
+    margin-top: 1rem;
+    border: 1px double rgba(0, 0, 0, 0.11);
+    display: flex;
+    background-color: $color-primary;
+    transition: all 0.2s ease;
+    border-radius: 20px;
+
+    &:hover {
+        box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.5), 10px 10px 3px 3px rgba(0, 0, 0, 0.5);
+    }
+}
+
+@mixin card-2 {
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1), 0 4px 8px rgba(0, 0, 0, 0.02);
+    border: double 5px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+}
+
+//BOTTONI PERSONALIZZATI
+
+@mixin button-primary {
+    display: block;
+    padding: 0.5rem;
+    text-align: center;
+    color: #3363ff;
+    background-color: #e6ecff;
+    border: none;
+    border-radius: 0.4rem;
+    transition: 0.2s;
+    cursor: pointer;
+
+    span {
+        margin-left: 1rem;
+        transition: 0.2s;
+    }
+
+    &:hover,
+    &:active {
+        color: white;
+        background-color: #b8c8fc;
+    }
+
+    &:hover span,
+    &:active span {
+        margin-left: 1.5rem;
+    }
+}
+
+@mixin button-delete {
+    display: block;
+    padding: 0.5rem;
+    text-align: center;
+    color: #fa0000;
+    background-color: #ff000044;
+    border: none;
+    border-radius: 0.4rem;
+    transition: 0.2s;
+    cursor: pointer;
+
+    span {
+        margin-left: 1rem;
+        transition: 0.2s;
+    }
+
+    &:hover,
+    &:active {
+        color: white;
+        background-color: #ff000080;
+    }
+
+    &:hover span,
+    &:active span {
+        margin-left: 1.5rem;
+    }
+}
+
+@mixin button-success {
+    display: block;
+    padding: 0.5rem;
+    text-align: center;
+    color: #3fa53c;
+    background-color: rgba(76, 253, 53, 0.443);
+    border: none;
+    border-radius: 0.4rem;
+    transition: 0.2s;
+    cursor: pointer;
+
+    span {
+        margin-left: 1rem;
+        transition: 0.2s;
+    }
+
+    &:hover,
+    &:active {
+        background-color: #4dbd3eaf;
+        color: white;
+    }
+
+    &:hover span,
+    &:active span {
+        margin-left: 1.5rem;
+    }
+}
+
+@mixin button-cart {
+    border-radius: 50%;
+    color: #ee5522;
+    border: none;
+    background-color: #ffbb339d;
+    padding: 0.5rem 0.65rem;
+    transition: 0.2s;
+    cursor: pointer;
+
+    &:hover,
+    &:active {
+        color: white;
+        background-color: #ffb41d;
+    }
+}
+
+@mixin modal {
+    .modal-overlay {
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        display: flex;
+        justify-content: center;
+        background-color: #000000da;
+        z-index: 100;
+    }
+
+    .modal {
+        text-align: center;
+        height: 550px;
+        width: 850px;
+        margin-top: 10%;
+        padding: 80px 0;
+        border-radius: 20px;
+        position: relative;
+        background-image: url(../../assets/background_img/sun-tornado.svg);
+        background-repeat: no-repeat;
+        background-size: cover;
+
+        img {
+            width: 30%;
+        }
+
+        p {
+            color: white;
+            font-size: 20px;
+            font-weight: 600;
+        }
+
+        .close {
+            margin: 10% 0 0 16px;
+            cursor: pointer;
+            position: absolute;
+            top: -38px;
+            right: 18px;
+            font-size: 30px;
+
+            i {
+                color: white;
+            }
+        }
+
+        .button {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 5rem;
+
+            .conferma {
+                @include button-success;
+                margin-right: 1rem;
+                padding: 2rem;
+                background-color: rgba(76, 253, 53, 0.5);
+                color: white;
+                &:hover,
+                &:active {
+                    color: white;
+                    background-color: rgba(76, 253, 53, 0.8);
+
+                }
+                font-size: 1rem
+            
+
+            }
+
+            .elimina {
+                @include button-delete;
+                padding: 2rem;
+                background-color: rgba(255, 0, 0, 0.5);
+                color: white;
+                &:hover,
+                &:active {
+                    color: white;
+                    background-color:rgba(255, 0, 0, 0.8)
+                }
+                font-size: 1rem
+
+            
+
+            }
+            a {
+                text-decoration: none;
+            }
+        }
+        
+    }
+}
+
+@mixin button-cart {
+    border-radius: 50%;
+    color: $color-tertiary;
+    border: #ee5522 solid 1px;
+    background-color: #ffbb33;
+    padding: 0.5rem 0.65rem;
+
+    &:hover,
+    &:active {
+        background-color: #ee5522;
+        color: $color-tertiary;
+    }
+}

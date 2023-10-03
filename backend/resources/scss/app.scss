@@ -1,0 +1,382 @@
+@import "~bootstrap/scss/bootstrap";
+@import "./partials/mixins";
+@import "./partials/variables";
+
+.loader {
+    width: 50px;
+    height: 50px;
+    border: 5px solid rgba(0, 0, 0, 0.5);
+    border-bottom-color: transparent;
+    border-radius: 50%;
+    display: inline-block;
+    box-sizing: border-box;
+    animation: rotation 1s linear infinite;
+}
+
+@keyframes rotation {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+// APP.BLADE
+.my-nav {
+    width: 100%;
+    background-color: $color-primary;
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.02);
+    height: 4rem;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    z-index: 100;
+    padding: 0;
+
+    .container-fluid {
+        height: 100%;
+        background-color: $color-primary;
+        border: none;
+        padding: 0;
+        @include container-80;
+    }
+
+    img {
+        height: 100%;
+    }
+
+    font-family: "Montserrat", sans-serif;
+
+    ul.navbar-nav {
+        background-color: $color-primary;
+    }
+}
+
+.login-container {
+    min-height: calc(100vh - 4rem);
+}
+
+.main-bg {
+    background-color: $gray-400;
+    padding-top: 4rem;
+}
+
+// LOGIN.BLADE
+
+.my-form {
+    background: hsla(0, 0%, 100%, 0.55);
+    backdrop-filter: blur(30px);
+    opacity: 0.8;
+}
+
+.my-button {
+    padding: 0.5rem 1rem;
+    text-align: center;
+    border: none;
+    border-radius: 2rem;
+    transition: 0.2s;
+    text-transform: uppercase;
+    font-size: smaller;
+    cursor: pointer;
+}
+
+.my-submit {
+    background-color: $blue-200;
+    font-weight: 300;
+
+    &:hover,
+    &:active {
+        background-color: $blue-400;
+        color: whitesmoke;
+    }
+}
+
+.my-type {
+    background-color: $gray-500;
+    font-weight: 300;
+    margin: 0.5rem 0.5rem;
+
+    &:hover,
+    &:active {
+        background-color: $gray-600 !important;
+        color: whitesmoke !important;
+    }
+}
+
+.right {
+    a {
+        text-decoration: none;
+        color: black;
+        padding: 1rem;
+        // transition: all 1s ease;
+
+        &:hover {
+            background-color: whitesmoke;
+        }
+
+        &:active {
+            background-color: $color-primary;
+        }
+    }
+}
+
+.cascading-right {
+    margin-right: -3.5rem;
+}
+// .my-img{
+//     background-image: url(../../public/storage/restaurant_img/food5.jpg);
+//     background-size: cover;
+//     background-repeat: no-repeat;
+
+// }
+input::placeholder {
+    font-size: smaller;
+    color: $gray-500 !important;
+    font-style: italic;
+}
+
+.ms_container_bg {
+    background-image: url(../../storage/app/public/backend_bg/BG3.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: center;
+    min-height: calc(100vh - 4rem);
+
+    a {
+        text-decoration: none;
+    }
+}
+
+.ms_black_container {
+    background-color: rgba(33, 37, 41, 0.9);
+    color: white;
+    min-height: 18rem;
+    border-radius: 15px;
+    min-width: 50%;
+}
+.ms_black_container.create {
+    transform: translate(-15px, -25px);
+    width: 80%;
+}
+
+.ms_black_container-dashboard {
+    background-color: rgba(33, 37, 41, 0.9);
+    color: white;
+    border-radius: 15px;
+    min-width: 50%;
+    max-width: 50%;
+    overflow: hidden;
+
+
+    .card-img-top-dashboard {
+        width: 100%;
+
+    }
+}
+
+.ms_button {
+    width: 50px;
+    height: 30px;
+    background: none;
+    border-radius: 25px;
+}
+
+.ms_button:hover {
+    background-color: black;
+}
+
+.ms_primary_button {
+    border: solid 1px rgb(3, 231, 140);
+    color: #55ffbb;
+}
+
+.ms_secondary_button {
+    border: solid 1px rgb(231, 159, 3);
+    color: rgb(231, 159, 3);
+}
+
+.ms_tertiary_button {
+    border: solid 1px rgb(179, 0, 59);
+    color: rgb(179, 0, 59);
+}
+
+.ms_button_variant {
+    padding: 10px 15px;
+    background: rgb(33, 37, 41);
+}
+
+.ms_button_variant:active {
+    background-color: black;
+}
+
+.ms_sidebar {
+    position: fixed;
+    top: 4rem;
+    left: 0;
+    background-color: $color-primary;
+}
+
+.table tr th {
+    background-color: rgb(33, 37, 41, 0.9);
+    color: #ff972b;
+}
+
+.color-logo {
+    background-color: #ff972b;
+}
+
+li a:hover {
+    background-color: #f3d9bf;
+}
+
+.table {
+    text-align: center;
+}
+
+.table tr:hover td {
+    background-color: rgb(33, 37, 41, 0.7);
+    color: #ff972b;
+}
+
+.total_gains {
+    height: 4rem;
+    width: 30rem;
+    padding: 1rem;
+    background-color: rgb(33, 37, 41, 0.9);
+    border: solid 1px rgb(3, 231, 140);
+    color: #55ffbb;
+    text-align: right;
+    width: 100%;
+}
+
+.ms_alert {
+    height: 6rem;
+    width: 60rem;
+    padding: 1.5rem;
+    background-color: rgb(33, 37, 41, 0.8);
+    color: #ffaa20;
+    border-radius: 15px;
+}
+
+.statistic {
+    width: 1000px;
+    margin: auto;
+    padding: 20px;
+}
+
+
+
+@media (max-width: 992px) {
+    .cascading-right {
+        transition: all 1s ease;
+        margin-right: 0;
+    }
+    .ms_black_container-dashboard {
+        transition: all 1s ease;
+        width: 4rem;
+    }
+
+    .text_logo {
+        display: none;
+    }
+
+    .my-form {
+        margin-top: 4rem;
+    }
+
+    .row .dish{
+        width: 50%;
+    }
+    .form-dishes-index{
+        select{
+            width: 130px;
+        }
+        button{
+            margin-left: 30px;
+        }
+    }
+}
+
+@media (max-width:768px){
+    .row .dish{
+        width: 80%;
+        margin-left: 180px;
+    }
+    .form-dishes-index{
+        margin-left: 180px;
+        button{
+            margin-left: 100px;
+        }
+    }
+}
+
+@media (max-width: 572px) {
+    .my-form {
+        margin-top: 2rem;
+    }
+    .ms_sidebar {
+        transition: all 1s ease;
+        width: 4rem;
+        padding: 0;
+
+        ul li {
+            width: 2rem;
+            a{
+                margin-left: 0!important;
+
+            }
+            span {
+                display: none;
+            }
+            i {
+                margin-left: -0.5rem;
+            }
+        }
+    }
+    .row .dish{
+        margin-left: 120px;
+    }
+
+    .form-dishes-index{
+        margin-left: 120px;
+    }
+    .statistic {
+        width: 320px;
+        padding: 5px;
+        margin: 20px 0;
+    }
+    .ms_black_container-dashboard {
+        min-width: 80%;
+        transform: translate(-20px,17px);
+    }
+    .ms_black_container{
+        min-width: 65%;
+    }
+    .table-orders table{
+        font-size: 10px;
+        tr td{
+            padding: 2px;
+            min-width: 10px;
+        }
+    }
+}
+//modifiche per la tabella ordini
+@media (max-width:900px) {
+    .table-orders{
+        margin-left: 30px;
+    }
+}
+
+@media (max-width:736px) {
+    .table-orders{
+        margin-left: 60px;
+    }
+}
+@media (max-width:572px) {
+    .table-orders{
+        margin-left: 0px;
+    }
+}
